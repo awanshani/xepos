@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/',function(){
+    return redirect()->route('companies.index');
+});
 Route::resource('companies', \App\Http\Controllers\CompanyController::class)->middleware('auth');
 Route::resource('employees', \App\Http\Controllers\EmployeeController::class)->middleware('auth');
 
