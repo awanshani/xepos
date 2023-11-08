@@ -16,22 +16,22 @@
                 <!--begin::Menu-->
                 <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
                     <div class="menu-item py-2">
-                        <a :class="this.$page.props.current_route=='companies.index'?'active':''" class="menu-link menu-center" :href="route('companies.index')">
+                        <Link :class="this.$page.props.current_route=='companies.index'?'active':''" class="menu-link menu-center" :href="route('companies.index')">
 										<span class="menu-icon me-0">
 											<i class="bi bi-building fs-2"></i>
 										</span>
                             <span class="menu-title">Companies</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div class="menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold" id="#kt_aside_menu" data-kt-menu="true">
                     <div class="menu-item py-2">
-                        <a :class="this.$page.props.current_route=='employees.index'?'active':''" class="menu-link menu-center" :href="route('employees.index')">
+                        <Link :class="this.$page.props.current_route=='employees.index'?'active':''" class="menu-link menu-center" :href="route('employees.index')">
 										<span class="menu-icon me-0">
 											<i class="bi bi-person fs-2"></i>
 										</span>
                             <span class="menu-title">Employees</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -41,11 +41,13 @@
 
 <script>
 import { defineComponent } from "vue";
+import {Link} from '@inertiajs/inertia-vue3';
 import {AssetMixin} from "../../mixins/AssetMixin";
 
 export default defineComponent({
     name: "Sidebar",
     mixins:[AssetMixin],
+    components:{Link},
     mounted() {
 
     },
